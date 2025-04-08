@@ -1,5 +1,5 @@
 # 빌드 이미지로 node:14 지정 
-FROM node:14 AS build
+FROM node:18 AS build
 
 WORKDIR /app
 
