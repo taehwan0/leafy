@@ -17,7 +17,7 @@ COPY . /app
 RUN npm run build
 
 # 프로덕션 스테이지
-FROM nginx:1.21.4-alpine 
+FROM nginx:1.27-alpine3.21
 COPY nginx.conf /etc/nginx/conf.d/default.conf.template
 ENV BACKEND_HOST leafy
 ENV BACKEND_PORT 8080
