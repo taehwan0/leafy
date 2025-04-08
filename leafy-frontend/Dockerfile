@@ -1,5 +1,5 @@
 # 빌드 이미지로 node:14 지정 
-FROM node:18 AS build
+FROM node:14 AS build
 
 WORKDIR /app
 
@@ -17,7 +17,7 @@ COPY . /app
 RUN npm run build
 
 # 프로덕션 스테이지
-FROM nginx:1.27-alpine3.21
+FROM nginx:1.21.4-alpine 
 COPY nginx.conf /etc/nginx/conf.d/default.conf.template
 ENV BACKEND_HOST leafy
 ENV BACKEND_PORT 8080
